@@ -4,7 +4,7 @@
 %                          colaboration with the INL lab in Carbondale, IL.
 function vers = eegplugin_Neurolode(fig, try_strings, catch_strings)
 
-vers = 1.3;
+vers = '1.3';
 % --- Neurolode 
 ParentMenu = uimenu(fig, 'label', 'Neurolode');
 
