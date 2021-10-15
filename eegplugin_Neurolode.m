@@ -4,7 +4,7 @@
 %                          colaboration with the INL lab in Carbondale, IL.
 function vers = eegplugin_Neurolode(fig, try_strings, catch_strings)
 
-vers = '1.3';
+vers = '1.4';
 % --- Neurolode 
 ParentMenu = uimenu(fig, 'label', 'Neurolode');
 
@@ -55,4 +55,10 @@ Analysis0 = uimenu (ParentMenu, 'label', 'Analysis');
                 ['[EEG com]  = pop_EEG_Spectral_Kurtosis_Freq(EEG, 1);;EEG = eegh(com, EEG);;[ALLEEG EEG CURRENTSET] = eeg_store(ALLEEG, EEG, CURRENTSET);']);
         uimenu( Spectral_Kurtosis0, 'label', 'Customize','callback', ...
                 ['[EEG com]  = pop_EEG_Spectral_Kurtosis_Custom(EEG, 1);;EEG = eegh(com, EEG);;[ALLEEG EEG CURRENTSET] = eeg_store(ALLEEG, EEG, CURRENTSET);']);
+      Spectral_PowerOss0 = uimenu (Analysis0, 'label','Power Spectrum Oscillation','callback', ...
+                ['[EEG com]  = pop_EEG_PowerSpectrumOss(EEG, 1);;EEG = eegh(com, EEG);;[ALLEEG EEG CURRENTSET] = eeg_store(ALLEEG, EEG, CURRENTSET);']); 
+				
+	Compare0 = uimenu (ParentMenu, 'label', 'Compare');
+        FFT0 = uimenu (Compare0, 'label', 'FFT','callback', ...
+                ['[EEG com]  = pop_CompareFFT(EEG, 1);;EEG = eegh(com, EEG);;[ALLEEG EEG CURRENTSET] = eeg_store(ALLEEG, EEG, CURRENTSET);']);
  end
